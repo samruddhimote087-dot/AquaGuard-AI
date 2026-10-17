@@ -1,56 +1,34 @@
-SMART WATER TANK MONITORING AGENT
-=================================
+AQUAGUARD AI — INTERACTIVE WATER TANK AGENT
+===========================================
 
-WHAT THIS PROJECT DOES
-This is a beginner-friendly, interactive demonstration of a SINGLE intelligent agent.
-It observes tank water level, decides whether to turn a simulated pump ON/OFF, and explains
-its decision on the screen.
+WHAT IS INCLUDED?
+- app.py: Interactive Streamlit dashboard and rule-based agent
+- requirements.txt: Python libraries needed
+- run_windows.bat: Windows double-click launcher
 
-IMPORTANT SAFETY NOTE
-This is a SOFTWARE SIMULATION ONLY. It does not connect to a real pump, relay, electrical
-wiring, or physical sensor. Do not connect this demo directly to real equipment.
+EASY START (WINDOWS)
+1. Extract the ZIP file to a normal folder such as Desktop\AquaGuard_AI_Interactive.
+2. Install Python 3.10 or newer from https://www.python.org/downloads/ if it is not installed.
+   During installation, tick "Add Python to PATH".
+3. Make sure the laptop has an internet connection for the first-time library installation.
+4. Double-click run_windows.bat.
+5. Wait while the libraries install. A browser tab should open with the dashboard.
+6. If the browser does not open automatically, look in the terminal for a local address such as:
+   http://localhost:8501
 
-HOW TO RUN ON WINDOWS
-1. Extract the ZIP file to a folder.
-2. Install Python 3.10 or newer from https://www.python.org/downloads/
-   During setup, enable "Add Python to PATH".
-3. Double-click run_windows.bat.
-4. Wait while Streamlit installs and starts.
-5. A browser tab should open. If not, copy the Local URL from the terminal
-   (usually http://localhost:8501) into your browser.
-6. Move the "Simulated water level" slider to test the agent.
-
-HOW TO TEST
-- Set level to 15%: agent should turn the pump ON (low water).
-- Set level to 50%: agent keeps the previous pump state (safe band).
-- Set level to 95%: agent should turn the pump OFF (high water).
-- Switch to Manual mode to test the manual pump toggle.
-- Change thresholds in the sidebar to test different settings.
-
-AGENT WORKING IN SIMPLE WORDS
-1. Observe: read water level.
-2. Decide: compare the level with low and high thresholds.
-3. Act: switch the simulated pump ON or OFF.
-4. Explain: display the reason for the decision.
-
-AGENT TYPE
-A single rule-based, model-based/reflex-style agent. One controller makes decisions;
-it does not require multiple agents.
-
-FILES
-app.py            - interactive UI and agent decision logic
-requirements.txt  - Python package needed
-run_windows.bat   - launcher for Windows
-README.txt        - setup and testing guide
+HOW TO TEST THE AGENT
+- Click "Test low level": level becomes 10%, and the automatic agent should turn the pump ON.
+- Click "Test full tank": level becomes 95%, and the agent should turn the pump OFF.
+- Use "Add water" and "Use water" to change the simulated level.
+- Turn off Automatic agent enabled in the sidebar to reveal manual pump controls.
+- Explore Level history, Activity log, and Project information tabs.
 
 TROUBLESHOOTING
-- If Python was not found, install Python and tick "Add Python to PATH".
-- If installation fails, check internet access and try again.
-- Alternatively, open Command Prompt in this folder and run:
-    py -m pip install -r requirements.txt
-    py -m streamlit run app.py
+- If Windows says Python was not found, install Python and enable Add Python to PATH.
+- If installation fails, check internet access and try launching run_windows.bat again.
+- If the browser does not open, manually visit http://localhost:8501 while the terminal is running.
+- To stop the app, focus the terminal and press Ctrl+C.
 
-HARDWARE VERSION
-A real implementation needs a suitable water-level sensor, a properly rated relay/contactor,
-electrical isolation, waterproof enclosure, and hardware-specific code. Have a qualified
-supervisor/electrician review the design. This ZIP is simulation-only.
+IMPORTANT
+This is an educational simulation. It does not connect to a real tank, sensor, relay, or pump.
+The agent is rule-based and does not use a trained machine-learning model.
